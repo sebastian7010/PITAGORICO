@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cinzel", serif;
+    background: linear-gradient(135deg, #1a0033, #330066, #4d0080, #1a0033);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: radial-gradient(2px 2px at 20px 30px, #fff, transparent), radial-gradient(2px 2px at 40px 70px, #fff, transparent), radial-gradient(1px 1px at 90px 40px, #fff, transparent), radial-gradient(1px 1px at 130px 80px, #fff, transparent), radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: sparkle 3s linear infinite;
+}
+
+@keyframes sparkle {
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 0;
+}
+
+.main-title {
+    font-family: "Dancing Script", cursive;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #ffd700, #ff69b4, #9370db, #ffd700);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 3s ease-in-out infinite;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+@keyframes textShimmer {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #e6ccff;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 40px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.crystal-ball {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.mystic-form {
+    position: relative;
+    z-index: 2;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #ffd700;
+    font-weight: 600;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    font-family: "Cinzel", serif;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(45deg, #ff69b4, #9370db, #ffd700);
+    background-size: 300% 300%;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: "Dancing Script", cursive;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: buttonGlow 2s ease-in-out infinite alternate;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+    }
+    100% {
+        box-shadow: 0 5px 30px rgba(147, 112, 219, 0.6);
+    }
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    animation-play-state: paused;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+}
+
+.results-container {
+    margin-top: 40px;
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.results-header h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 2.5rem;
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.new-reading-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffd700;
+    border-radius: 20px;
+    color: #ffd700;
+    font-family: "Cinzel", serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.new-reading-btn:hover {
+    background: #ffd700;
+    color: #1a0033;
+    transform: scale(1.05);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.result-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.result-card:hover::before {
+    left: 100%;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+    border-color: #ffd700;
+}
+
+.result-card h3 {
+    color: #ffd700;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.number-display,
+.zodiac-display,
+.animal-display,
+.destiny-number {
+    font-size: 3rem;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff69b4, #9370db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
+}
+
+.result-card p,
+.result-card div {
+    line-height: 1.6;
+    color: #e6ccff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Colores específicos para cada tipo de carta */
+
+.numerology-card {
+    border-color: rgba(255, 105, 180, 0.3);
+}
+
+.zodiac-card {
+    border-color: rgba(147, 112, 219, 0.3);
+}
+
+.chinese-card {
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.name-card {
+    border-color: rgba(0, 255, 255, 0.3);
+}
+
+.destiny-card {
+    border-color: rgba(255, 165, 0, 0.3);
+}
+
+.personality-card {
+    border-color: rgba(255, 192, 203, 0.3);
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .form-container {
+        padding: 25px;
+    }
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    .results-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .results-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    .main-title {
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .form-container {
+        padding: 20px;
+    }
+    .crystal-ball {
+        font-size: 3rem;
+    }
+}

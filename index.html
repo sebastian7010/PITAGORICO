@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Descubre tu Esencia Mística ✨</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <header>
+            <h1 class="main-title">✨ Descubre tu Esencia Mística ✨</h1>
+            <p class="subtitle">Conoce los secretos del universo a través de tu nombre y fecha de nacimiento</p>
+        </header>
+
+        <div class="form-container" id="formContainer">
+            <div class="crystal-ball">🔮</div>
+            <form id="mysticForm" class="mystic-form">
+                <div class="input-group">
+                    <label for="nombre">🌙 Tu Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre completo...">
+                </div>
+
+                <div class="input-group">
+                    <label for="fechaNacimiento">⭐ Fecha de Nacimiento</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="nacionalidad">🌍 Nacionalidad</label>
+                    <select id="nacionalidad" name="nacionalidad" required>
+                        <option value="">Selecciona tu nacionalidad...</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="bolivia">Bolivia</option>
+                        <option value="chile">Chile</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="costarica">Costa Rica</option>
+                        <option value="cuba">Cuba</option>
+                        <option value="ecuador">Ecuador</option>
+                        <option value="elsalvador">El Salvador</option>
+                        <option value="españa">España</option>
+                        <option value="guatemala">Guatemala</option>
+                        <option value="honduras">Honduras</option>
+                        <option value="mexico">México</option>
+                        <option value="nicaragua">Nicaragua</option>
+                        <option value="panama">Panamá</option>
+                        <option value="paraguay">Paraguay</option>
+                        <option value="peru">Perú</option>
+                        <option value="puertorico">Puerto Rico</option>
+                        <option value="republicadominicana">República Dominicana</option>
+                        <option value="uruguay">Uruguay</option>
+                        <option value="venezuela">Venezuela</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>🌟 Revelar mi Destino 🌟</span>
+                </button>
+            </form>
+        </div>
+
+        <div class="results-container" id="resultsContainer" style="display: none;">
+            <div class="results-header">
+                <h2>✨ Tu Perfil Místico ✨</h2>
+                <button class="new-reading-btn" onclick="nuevaLectura()">🔄 Nueva Lectura</button>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card numerology-card">
+                    <h3>🔢 Numerología Pitagórica</h3>
+                    <div class="number-display" id="numeroPitagorico"></div>
+                    <p id="significadoNumerico"></p>
+                </div>
+
+                <div class="result-card zodiac-card">
+                    <h3>♈ Signo Zodiacal</h3>
+                    <div class="zodiac-display" id="signoZodiacal"></div>
+                    <p id="descripcionZodiacal"></p>
+                </div>
+
+                <div class="result-card chinese-card">
+                    <h3>🐉 Animal Chino</h3>
+                    <div class="animal-display" id="animalChino"></div>
+                    <p id="descripcionAnimal"></p>
+                </div>
+
+                <div class="result-card name-card">
+                    <h3>💫 Significado de tu Nombre</h3>
+                    <div id="significadoNombre"></div>
+                </div>
+
+                <div class="result-card destiny-card">
+                    <h3>🌟 Tu Número del Destino</h3>
+                    <div class="destiny-number" id="numeroDestino"></div>
+                    <p id="descripcionDestino"></p>
+                </div>
+
+                <div class="result-card personality-card">
+                    <h3>🦋 Tu Esencia Personal</h3>
+                    <div id="esenciaPersonal"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
